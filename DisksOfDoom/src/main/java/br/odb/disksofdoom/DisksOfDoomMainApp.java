@@ -7,7 +7,7 @@ import java.util.LinkedList;
 public class DisksOfDoomMainApp extends ConsoleApplication {
 
 
-    public class Disk {
+    public static class Disk {
 
         public int size;
 
@@ -81,7 +81,7 @@ public class DisksOfDoomMainApp extends ConsoleApplication {
         continueRunning = true;
 
         for (UserCommandLineAction cmd : new UserCommandLineAction[]{
-            new QuitCommand(this), new MoveCommand(), new SolveCommand(this),
+            new QuitCommand(this), new NewGameCommand( this ), new MoveCommand(), new SolveCommand(this),
             new StatusCommand(this)}) {
 
             this.registerCommand(cmd);

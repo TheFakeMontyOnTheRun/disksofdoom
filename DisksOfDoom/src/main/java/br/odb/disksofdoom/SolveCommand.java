@@ -64,11 +64,20 @@ public class SolveCommand extends UserMetaCommandLineAction {
 	}
 
 	@Override
-	public void run(ConsoleApplication app, String arg1) throws Exception {
+	public void run(ConsoleApplication app, String operand) throws Exception {
 		
 		DisksOfDoomMainApp game = (DisksOfDoomMainApp) app;
 		
-		moveFrom( 6, game.pole[ 0 ], 0, game.pole[ 2 ], 2, game.pole[ 1 ], 1 );
+		new NewGameCommand( game ).run(app, operand );
+		
+		int disks = Integer.parseInt( operand );
+		
+		if ( disks < 1 || disks > 10 ) {
+			return;
+		}
+		
+		
+		moveFrom( disks, game.pole[ 0 ], 0, game.pole[ 2 ], 2, game.pole[ 1 ], 1 );
 		
 //		LinkedList< SolutionMove > moves = new LinkedList< SolutionMove >();
 //		
