@@ -2,6 +2,7 @@ package br.odb.disksofdoom;
 
 import br.odb.gameapp.ConsoleApplication;
 import br.odb.gameapp.UserCommandLineAction;
+
 import java.util.LinkedList;
 
 public class DisksOfDoomMainApp extends ConsoleApplication {
@@ -90,4 +91,12 @@ public class DisksOfDoomMainApp extends ConsoleApplication {
         return super.init();
     }
 
+	public void updateVisuals(DisksOfDoomMainApp game) {
+		try {
+			new StatusCommand( game).run(game, "");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+	}
 }

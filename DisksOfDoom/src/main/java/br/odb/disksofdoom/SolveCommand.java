@@ -40,26 +40,29 @@ public class SolveCommand extends UserMetaCommandLineAction {
 		return 1;
 	}
 	
-	public void moveFrom( int n, LinkedList< Disk > from, int index0, LinkedList< Disk> to, int index1, LinkedList< Disk > using, int index2 ) {
+	public void moveFrom( DisksOfDoomMainApp game, int n, LinkedList< Disk > from, int index0, LinkedList< Disk> to, int index1, LinkedList< Disk > using, int index2 ) {
 		Disk d;
 		
 		System.out.println( "solving from n = " + n + " from " + index0 + " to " + index1 + " using " + index2  );
-		
+
 		if ( n == 1 ) {
 
+			
 			d = from.pop();
 			System.out.println( "moving disk  = " + d.size + " from " + index0 + " to " + index1 );
 			to.push( d );
+			
+			updateVisuals( game);
 		} else {
 
-			moveFrom( n - 1, from, index0, using, index2, to, index1 );
+			moveFrom( game, n - 1, from, index0, using, index2, to, index1 );
 
 			d = from.pop();
 			System.out.println( "moving disk  = " + d.size + " from " + index0 + " to " + index1 );
 			to.push( d );
-						
+			updateVisuals( game);			
 			
-			moveFrom( n - 1, using, index2, to, index1, from, index0 );
+			moveFrom( game, n - 1, using, index2, to, index1, from, index0 );
 		}
 	}
 
@@ -70,15 +73,15 @@ public class SolveCommand extends UserMetaCommandLineAction {
 		
 		new NewGameCommand( game ).run(app, operand );
 		
+		
 		int disks = Integer.parseInt( operand );
 		
 		if ( disks < 1 || disks > 10 ) {
 			return;
 		}
 		
-		
-		moveFrom( disks, game.pole[ 0 ], 0, game.pole[ 2 ], 2, game.pole[ 1 ], 1 );
-		
+		updateVisuals( game );
+		moveFrom( game, disks, game.pole[ 0 ], 0, game.pole[ 2 ], 2, game.pole[ 1 ], 1 );
 //		LinkedList< SolutionMove > moves = new LinkedList< SolutionMove >();
 //		
 //		moves.push( new SolutionMove( 2, 0, 2, 1 ) );
@@ -111,6 +114,10 @@ public class SolveCommand extends UserMetaCommandLineAction {
 		
 	}
 
+	private void updateVisuals(DisksOfDoomMainApp game) {
+		game.updateVisuals( game );
+	}
+	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
