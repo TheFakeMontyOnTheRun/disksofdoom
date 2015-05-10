@@ -1,6 +1,5 @@
 package br.odb.disksofdoom;
 
-import br.odb.disksofdoom.DisksOfDoomMainApp.Disk;
 import br.odb.gameapp.ConsoleApplication;
 import br.odb.gameapp.UserCommandLineAction;
 

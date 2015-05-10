@@ -4,6 +4,7 @@ import br.odb.disksofdoom.DisksOfDoomMainApp.Disk;
 import br.odb.gameapp.ApplicationClient;
 import br.odb.utils.FileServerDelegate;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -43,6 +44,9 @@ public class DisksOfDoomGameActivity extends Activity implements ApplicationClie
 		doom.start();
 		
 		updateState();
+		
+		Intent intent = new Intent( this, PresentationWithMediaRouterActivity.class );
+		this.startActivity(intent);
 	}
 
 	private void updateState() {

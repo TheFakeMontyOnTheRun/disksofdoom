@@ -39,7 +39,7 @@ public class DisksOfDoomMainApp extends ConsoleApplication {
                 .setAuthorName("Daniel 'MontyOnTheRun' Monteiro")
                 .setLicenseName("3-Clause BSD").setReleaseYear(2014);
         doom.createDefaultClient();
-        doom.start();
+        new Thread( doom ).start();
     }
 
     @Override
