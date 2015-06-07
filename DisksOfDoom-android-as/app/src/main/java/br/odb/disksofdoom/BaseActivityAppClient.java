@@ -46,7 +46,7 @@ public class BaseActivityAppClient extends Activity implements ApplicationClient
 
     @Override
     public String getInput(String s) {
-        return null;
+        return "";
     }
 
     @Override

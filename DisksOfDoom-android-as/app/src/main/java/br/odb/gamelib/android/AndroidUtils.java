@@ -3,6 +3,8 @@
  */
 package br.odb.gamelib.android;
 
+import android.graphics.RectF;
+
 import br.odb.gamerendering.rendering.AssetManager;
 import br.odb.gamerendering.rendering.DisplayList;
 import br.odb.gamerendering.rendering.RenderingNode;
@@ -111,5 +113,16 @@ public class AndroidUtils {
 		gv.setRenderingContent(dl);
 		gv.updater.setRunning( false );
 		gv.postInvalidate();		
+	}
+
+	public static RectF toAndroidRectF(Rect rect) {
+		android.graphics.RectF androidRect = new android.graphics.RectF();
+
+		androidRect.left = rect.p0.x;
+		androidRect.right = rect.p1.x;
+		androidRect.top = rect.p0.y;
+		androidRect.bottom = rect.p1.y;
+
+		return androidRect;
 	}
 }

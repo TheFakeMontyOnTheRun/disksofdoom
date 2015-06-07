@@ -231,6 +231,14 @@ public class AndroidCanvasRenderingContext extends RenderingContext {
 		canvas.clipRect(rect, Region.Op.REPLACE);
 	}
 
+
+	@Override
+	public void drawOval(Rect rect, Color c) {
+		android.graphics.RectF _rect = AndroidUtils.toAndroidRectF( rect );
+		paint.setColor( c.getARGBColor() );
+		canvas.drawOval( _rect, paint );
+	}
+
 	@Override
 	public void setCurrentAlpha(float f) {
 		super.setCurrentAlpha(f);

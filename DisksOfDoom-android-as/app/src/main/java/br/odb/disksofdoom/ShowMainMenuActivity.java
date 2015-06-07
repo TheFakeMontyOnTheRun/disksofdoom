@@ -6,16 +6,27 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 
-public class ShowMainMenuActivity extends Activity implements View.OnClickListener {
+public class ShowMainMenuActivity extends Activity implements View.OnClickListener, SeekBar.OnSeekBarChangeListener {
+
+
+    SeekBar sbDisks;
+    TextView tvDisks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_main_menu);
 
-        findViewById( R.id.btnPlay ).setOnClickListener( this );
+        findViewById( R.id.btnPlay ).setOnClickListener(this);
+        sbDisks = (SeekBar) findViewById(R.id.sbDisks);
+        sbDisks.setOnSeekBarChangeListener( this );
+        tvDisks = (TextView) findViewById( R.id.tvDisks );
+
+        updateText();
     }
 
     @Override
@@ -43,6 +54,26 @@ public class ShowMainMenuActivity extends Activity implements View.OnClickListen
     @Override
     public void onClick(View view) {
         Intent intent = new Intent( this, DisksOfDoomGameActivity.class );
+        intent.putExtra("disks", ( sbDisks.getProgress() + 2) );
         startActivity( intent );
+    }
+
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+        updateText();
+    }
+
+    void updateText() {
+        tvDisks.setText( "Playing with " + ( sbDisks.getProgress() + 2 ) + " disks." );
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
     }
 }

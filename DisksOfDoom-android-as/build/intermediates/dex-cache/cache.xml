@@ -5,15 +5,8 @@
         jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/libs/gameutils-1.0-SNAPSHOT.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="20f4a2c2bcc831d0614f16bcb05ab1fd47215f77">
+        sha1="3116dfecfc62c6b400d02e8440d41f41d39de087">
         <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/gameutils-1.0-SNAPSHOT-aac35206906fc9e9fadaef1af09ca22ca73d26ad.jar" />
-    </item>
-    <item
-        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/libs/gamerendering-1.0-SNAPSHOT.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="6653b69d777fa9d40cdc0156d97cc29f90922df1">
-        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/gamerendering-1.0-SNAPSHOT-b37ef73016e1774429b0f9d170c7b049bfdff29c.jar" />
     </item>
     <item
         jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/classes.jar"
@@ -23,11 +16,11 @@
         <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/classes-bd5b0fadc385ea541dde3e429734d0d1c48a1be3.jar" />
     </item>
     <item
-        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/libs/gameapp-1.0-SNAPSHOT.jar"
+        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/libs/gamerendering-1.0-SNAPSHOT.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="b1f37fdd3f9a80ed9d5676f0d3f73169552546ce">
-        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/gameapp-1.0-SNAPSHOT-55607c2895d99c0652333de87792a5877dd4be1e.jar" />
+        sha1="8c440aa03d5cf1f30fd60a2d717779f2e8c9ad2f">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/gamerendering-1.0-SNAPSHOT-b37ef73016e1774429b0f9d170c7b049bfdff29c.jar" />
     </item>
     <item
         jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/libs/internal_impl-22.2.0.jar"
@@ -35,6 +28,13 @@
         revision="22.0.1"
         sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
         <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-421ee5cf87ca576c34decb850f5ee9b59490a1b0.jar" />
+    </item>
+    <item
+        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/libs/gameapp-1.0-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c06a72c8ca6a8dc8a96b851c2fffab7407388eb8">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/gameapp-1.0-SNAPSHOT-55607c2895d99c0652333de87792a5877dd4be1e.jar" />
     </item>
     <item
         jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/classes.jar"

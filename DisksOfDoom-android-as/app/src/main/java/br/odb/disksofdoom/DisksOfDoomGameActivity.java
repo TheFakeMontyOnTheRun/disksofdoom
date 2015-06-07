@@ -11,6 +11,7 @@ import java.util.List;
 
 import br.odb.disksofdoom.DisksOfDoomMainApp.Disk;
 import br.odb.gamelib.android.GameView;
+import br.odb.gamerendering.rendering.RenderingContext;
 import br.odb.gamerendering.rendering.RenderingNode;
 import br.odb.gamerendering.rendering.SolidSquareRenderingNode;
 import br.odb.utils.Color;
@@ -18,7 +19,7 @@ import br.odb.utils.Rect;
 
 public class DisksOfDoomGameActivity extends BaseActivityAppClient implements OnClickListener {
 
-    public static final int BASE_MEASURE = 20;
+    public static final int BASE_MEASURE = 40;
 
     private class Pin extends SolidSquareRenderingNode {
 
@@ -27,10 +28,39 @@ public class DisksOfDoomGameActivity extends BaseActivityAppClient implements On
         }
     }
 
-    private class GraphicalDisk extends SolidSquareRenderingNode {
+    private class GraphicalDisk extends RenderingNode {
 
-        public GraphicalDisk(Rect rect, Color color) {
-            super(rect, color);
+        private final Rect area;
+        private final Color color;
+
+        public GraphicalDisk( Rect area, Color color) {
+            super(  "disk_" + color );
+
+            this.area = area;
+            this.color = color;
+        }
+
+        @Override
+        public void render(RenderingContext renderingContext) {
+
+            Rect rect1 = new Rect( area );
+            Rect rect2 = new Rect( area );
+            Rect rect3 = new Rect( area );
+
+            rect1.p0.y += 0 * area.getDY() / 3.0f;
+            rect2.p0.y += 1 * area.getDY() / 3.0f - ( area.getDY() / 6.0f  );
+            rect3.p0.y += 2 * area.getDY() / 3.0f;
+
+            rect1.p1.y = rect1.p0.y + area.getDY() / 3.0f;
+            rect2.p1.y = rect2.p0.y + 2 * (area.getDY() / 3.0f ) ;
+            rect3.p1.y = rect3.p0.y + area.getDY() / 3.0f;
+
+            renderingContext.drawOval( rect3, color );
+            renderingContext.fillRect( color, rect2 );
+
+            Color c2 = new Color( color );
+            c2.multiply( 1.25f );
+            renderingContext.drawOval( rect1, c2 );
         }
     }
 
@@ -69,8 +99,8 @@ public class DisksOfDoomGameActivity extends BaseActivityAppClient implements On
                 .setAuthorName("Daniel 'MontyOnTheRun' Monteiro")
                 .setLicenseName("3-Clause BSD").setReleaseYear(2014);
         doom.setApplicationClient(this);
-        doom.start();
-        doom.sendData("new-game 5");
+        new Thread( doom ).start();
+        doom.sendData("new-game " + getIntent().getIntExtra("disks", 3) );
 
         startingTime = System.currentTimeMillis();
 
@@ -79,7 +109,7 @@ public class DisksOfDoomGameActivity extends BaseActivityAppClient implements On
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while( doom.isAlive()) {
+                while( true ) {
                     try {
                         updateTime();
                         Thread.sleep( 1000 );
@@ -161,21 +191,22 @@ public class DisksOfDoomGameActivity extends BaseActivityAppClient implements On
 
         int current = sizeOnTopOfPile( from );
 
-        getPoleRenderingElements((GameView) this.findViewById(R.id.pin1), doom.pole[0], 0, from == 0, shouldHighlight(current, 0));
-        getPoleRenderingElements((GameView) this.findViewById(R.id.pin2), doom.pole[1], 1, from == 1, shouldHighlight(current, 1));
-        getPoleRenderingElements((GameView) this.findViewById(R.id.pin3), doom.pole[2], 2, from == 2, shouldHighlight(current, 2));
+        getPoleRenderingElements((GameView) this.findViewById(R.id.pin1), 0, from == 0, shouldHighlight(current, 0));
+        getPoleRenderingElements((GameView) this.findViewById(R.id.pin2), 1, from == 1, shouldHighlight(current, 1));
+        getPoleRenderingElements((GameView) this.findViewById(R.id.pin3), 2, from == 2, shouldHighlight(current, 2));
 
         txtMoves.setText("" + doom.move);
     }
 
-    private void getPoleRenderingElements(GameView polePane, List<Disk> disks, int index, boolean selected, boolean hightlighted) {
+    private void getPoleRenderingElements(GameView polePane, int poleIndex, boolean selected, boolean hightlighted) {
 
+        List<Disk> disks = doom.pole[ poleIndex ];
         GraphicalDisk disc;
         Pin pole;
         BackgroundForPin background;
         List<RenderingNode> nodes = new ArrayList<>();
 
-        background = new BackgroundForPin(new Rect(0, 0,  polePane.getWidth(), polePane.getHeight()), getBackgroundColour(index));
+        background = new BackgroundForPin(new Rect(0, 0,  polePane.getWidth(), polePane.getHeight()), getBackgroundColour(poleIndex));
         nodes.add(background);
 
         int size = numberOfDisks * BASE_MEASURE;
@@ -186,14 +217,15 @@ public class DisksOfDoomGameActivity extends BaseActivityAppClient implements On
         nodes.add(pole);
 
         Color c;
-        int pos = 0;
+        Disk d;
 
-        for (Disk d : disks) {
-            ++pos;
-            c = getColorForDisk(selected, pos);
-            disc = new GraphicalDisk(new Rect( ( width / 2 ) - d.size * ( BASE_MEASURE / 2.0f ), height - ( disks.size() * BASE_MEASURE ) + BASE_MEASURE * ( pos  - 1 ), BASE_MEASURE + (d.size * BASE_MEASURE), BASE_MEASURE), c );
+        for ( int pos = disks.size() - 1; pos >= 0; --pos ) {
+            d = disks.get( pos );
+            c = getColorForDisk(selected, poleIndex, pos);
+            disc = new GraphicalDisk(new Rect( ( width / 2 ) - d.size * ( BASE_MEASURE / 2.0f ), height - ( ( disks.size() - 1 ) * ( BASE_MEASURE ) ) + ( BASE_MEASURE  ) * ( pos  - 1 ), BASE_MEASURE + (d.size * BASE_MEASURE), BASE_MEASURE), c );
             nodes.add(disc);
         }
+
         polePane.setRenderingContent(nodes);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -203,15 +235,19 @@ public class DisksOfDoomGameActivity extends BaseActivityAppClient implements On
     }
 
     private Color getPinColour(boolean hightlighted) {
-        return hightlighted ?  new Color(255, 255, 0) : new Color(255, 255, 255);
+        return hightlighted ?  new Color(255, 255, 0) : new Color( 128, 128, 128);
     }
 
     private Color getBackgroundColour(int index) {
+        ++index;
         return new Color( index * 85, index * 85, index * 85 );
     }
 
-    private Color getColorForDisk(boolean selectedPin, int positionInPin) {
-        return selectedPin && (positionInPin == 1) ? SELECTED_DISK_COLOUR : new Color(0, 255 - ( positionInPin * ( 255 / ( numberOfDisks + 1) ) ), 0);
+    private Color getColorForDisk(boolean selectedPin, int pin, int positionInPin) {
+
+        int  value = doom.pole[ pin ].get( positionInPin ).size;
+
+        return selectedPin && (positionInPin == 0) ? SELECTED_DISK_COLOUR : new Color(0, 255 - ( value * ( 255 / ( numberOfDisks + 1) ) ), 0);
     }
 
     @Override
