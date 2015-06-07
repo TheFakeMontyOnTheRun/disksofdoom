@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.odb.disksofdoom"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name="br.odb.disksofdoom.DisksOfDoomGameActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="br.odb.disksofdoom.PresentationWithMediaRouterActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="br.odb.disksofdoom.ShowMainMenuActivity"
+            android:label="Disk of Doom - the ultimage challenge for the mind" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="android.support.v7.widget.TestActivity"
+            android:label="RecyclerViewTestActivity" />
+    </application>
+
+</manifest>

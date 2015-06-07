@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"  ?>
+<resources>
+    <style
+        name = "Theme.DisksOfDoom"
+        parent = "@android:style/Theme.Material.Light.DarkActionBar"
+        >
+
+        <item name = "android:colorPrimary">#550000</item>
+        <item name = "android:colorPrimaryDark">#220000</item>
+    </style>
+</resources>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/libs/gameutils-1.0-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="20f4a2c2bcc831d0614f16bcb05ab1fd47215f77">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/gameutils-1.0-SNAPSHOT-aac35206906fc9e9fadaef1af09ca22ca73d26ad.jar" />
+    </item>
+    <item
+        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/libs/gamerendering-1.0-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6653b69d777fa9d40cdc0156d97cc29f90922df1">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/gamerendering-1.0-SNAPSHOT-b37ef73016e1774429b0f9d170c7b049bfdff29c.jar" />
+    </item>
+    <item
+        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/classes-bd5b0fadc385ea541dde3e429734d0d1c48a1be3.jar" />
+    </item>
+    <item
+        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/libs/gameapp-1.0-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b1f37fdd3f9a80ed9d5676f0d3f73169552546ce">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/gameapp-1.0-SNAPSHOT-55607c2895d99c0652333de87792a5877dd4be1e.jar" />
+    </item>
+    <item
+        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-421ee5cf87ca576c34decb850f5ee9b59490a1b0.jar" />
+    </item>
+    <item
+        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/classes-c27301cddfb417c834e1a140ac72f1fbf02375ff.jar" />
+    </item>
+    <item
+        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/libs/libstrip-1.0-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="350e1750575c1fe524649659aff8b25befa0d435">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/libstrip-1.0-SNAPSHOT-57e1dd7d4d86acca7acd926a7920758b857d5c3b.jar" />
+    </item>
+    <item
+        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/libs/libsvg-1.0-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="296d3495d4f518362284fac05d2124ff36e8f470">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/libsvg-1.0-SNAPSHOT-0348a078f9b48a60af77e713fe2536c66b730abf.jar" />
+    </item>
+    <item
+        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/exploded-aar/com.android.support/palette-v7/21.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b65c2fede61220ed2b6a063f11ca13160910089e">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/classes-ecd98aa5a11c9f5b5c76436d47e41e06aa440cbf.jar" />
+    </item>
+    <item
+        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/classes-2c8eacf6a20e391b9a9d994c4b64f4a86103b33a.jar" />
+    </item>
+    <item
+        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="efeda77c808750cb670ee9c48d8a1835d89dbcb2">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/classes-ff86f20dd655cbfb11736ac5ec15807bed081592.jar" />
+    </item>
+    <item
+        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/libs/gameworld-1.0-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0d520682c254c24ff27e4a9b34a570c95bc93591">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/gameworld-1.0-SNAPSHOT-f59cdf9e8278f3f463bf6470c36030117415808e.jar" />
+    </item>
+    <item
+        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/21.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6c6b497aa9e3aadbaabf975379e7914fa9e65523">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/classes-e88a82f2b44ff131b2f96e21c227fb7f6a0f1518.jar" />
+    </item>
+    <item
+        jar="/Users/monty/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-fd5c32fa6c010cc057fe5080dae68c181f708494.jar" />
+    </item>
+    <item
+        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/libs/disks-of-doom-1.0-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="77b2056076a42214331bfe19fb629cb9ffc605c3">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/disks-of-doom-1.0-SNAPSHOT-dee16ab42bdb60f22aad46d2dd64729dbb2fdbdb.jar" />
+    </item>
+    <item
+        jar="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7d2525cba8ed61fff102977caed964fc22061e34">
+        <dex dex="/Users/monty/gitcenter/disksofdoom/DisksOfDoom-android-as/app/build/intermediates/pre-dexed/debug/classes-b0e420c17d2071a2fdd77659626efbad60c0166f.jar" />
+    </item>
+
+</items>
